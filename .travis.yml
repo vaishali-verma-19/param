@@ -33,22 +33,7 @@ jobs:
         - pip install tox
       script:
         - tox -e $TOX_ENV
-    - arch: arm64 
-    - <<: *default
-      python: 3.8
-      env: TOX_ENV=py38
-    - arch: arm64 
-    - <<: *default
-      python: 3.6
-      env: TOX_ENV=py36
-    - arch: arm64 
-    - <<: *default
-      python: 3.5
-      env: TOX_ENV=py35
-    - arch: arm64
-    - <<: *default
-      python: 2.7
-      env: TOX_ENV=py27 
+    
     - <<: *default
       python: pypy
       env: TOX_ENV=pypy
