@@ -35,11 +35,11 @@ jobs:
         - tox -e $TOX_ENV
 
     - arch: arm64 
-      <<: *default
+    - <<: *default
       python: 3.8
       env: TOX_ENV=py38
     - arch: arm64 
-      <<: *default
+    - <<: *default
       python: 3.6
       env: TOX_ENV=py36
     - arch: arm64 
