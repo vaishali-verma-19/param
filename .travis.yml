@@ -24,8 +24,8 @@ stages:
 jobs:
   fast_finish: true
   include:
-    - arch: arm64
-      &default
+    - &default
+      arch: arm64
       stage: test
       python: 3.7
       env: TOX_ENV=py37
@@ -33,7 +33,32 @@ jobs:
         - pip install tox
       script:
         - tox -e $TOX_ENV
-    
+        
+    - &default
+      arch: arm64
+      stage: test
+      python: 3.7
+      env: TOX_ENV=py37
+      install:
+         - pip install tox
+      script:
+          - tox -e $TOX_ENV
+    - <<: *default
+       arch: arm64
+       python: 3.8
+       env: TOX_ENV=py38
+    - <<: *default
+      arch: arm64
+      python: 3.6
+      env: TOX_ENV=py36
+    - <<: *default
+      arch: arm64
+      python: 3.5
+      env: TOX_ENV=py35
+    - <<: *default
+      arch: arm64
+      python: 2.7
+      env: TOX_ENV=py27
     - <<: *default
       python: pypy
       env: TOX_ENV=pypy
