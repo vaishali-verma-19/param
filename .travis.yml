@@ -3,7 +3,10 @@ language: python
 # quick hack to determine what tag is (improvements welcomed)
 #     release: ^v(\d+|\.)+[^a-z]\d+$
 # dev release: ^v(\d+|\.)+[a-z]\d+$
-
+os: linux
+aarch: 
+    - amd64
+    - arm64
 stages:
   - lint
   - test
